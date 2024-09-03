@@ -7,10 +7,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
 
-service_name = 'esealservice'
+service_name = 'service_name'
 
 print(f"""------------------------------------------------
-        Tracking Server Service Status
+        Service Status
 ------------------------------------------------""")
 
 def check_service_status(ipaddr, username, password, service_name):
@@ -38,8 +38,8 @@ def check_service_status(ipaddr, username, password, service_name):
 
 def send_email(subject, body, to_email):
     """Send an email with the specified subject and body."""
-    from_email = "mizbee.ai.info@gmail.com"  # Replace with your email
-    from_password = "fjxp zbvb ztth zawp"  # Replace with your email password
+    from_email = "mail@gmail.com"  # Replace with your email
+    from_password = ""  # Replace with your email password
 
     # Create the email message
     msg = MIMEMultipart()
@@ -63,7 +63,7 @@ def send_email(subject, body, to_email):
         print(f"Failed to send email: {str(e)}")
 
 # Read the CSV and check the service status
-with open('hostname.csv', newline='') as csvfile:
+with open('file.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         ipaddr = row['DSIP']
